@@ -380,4 +380,6 @@ export declare class WindowType extends Vue {
     private onResizableChange(resizable);
     private onIsOpenChange(isOpen);
     private onZGroupChange();
+    private fixPosition();
+    private onResizeWindow;
 }
