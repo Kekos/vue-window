@@ -11,3 +11,4 @@ export interface WindowStyle {
 export declare function StyleFactory(windowStyle: WindowStyle): Vue.ComponentOptions<Vue>;
 export declare const StyleBlack: Vue.ComponentOptions<Vue>;
 export declare const StyleWhite: Vue.ComponentOptions<Vue>;
+export declare const StyleMetal: Vue.ComponentOptions<Vue>;

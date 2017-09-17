@@ -8417,6 +8417,7 @@ var index_vue_1 = __webpack_require__(13);
 var style_1 = __webpack_require__(29);
 exports.StyleBlack = style_1.StyleBlack;
 exports.StyleWhite = style_1.StyleWhite;
+exports.StyleMetal = style_1.StyleMetal;
 exports.StyleFactory = style_1.StyleFactory;
 var script_1 = __webpack_require__(9);
 exports.WindowType = script_1.WindowType;
@@ -8426,6 +8427,7 @@ function install(vue, options) {
     vue.component("" + prefix, index_vue_1.default);
     vue.component(prefix + "-style-black", style_1.StyleBlack);
     vue.component(prefix + "-style-white", style_1.StyleWhite);
+    vue.component(prefix + "-style-metal", style_1.StyleMetal);
 }
 exports.install = install;
 
@@ -8645,7 +8647,7 @@ exports.naturalSize = naturalSize;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(12);
-module.exports = __webpack_require__(57);
+module.exports = __webpack_require__(60);
 
 
 /***/ }),
@@ -8664,6 +8666,7 @@ var sample4_vue_1 = __webpack_require__(37);
 var sample5_vue_1 = __webpack_require__(40);
 var sample6_vue_1 = __webpack_require__(42);
 var sample7_vue_1 = __webpack_require__(54);
+var sample8_vue_1 = __webpack_require__(57);
 vue_1.default.use(VueWindow);
 window.addEventListener('load', function (e) {
     var Sample = {
@@ -8674,6 +8677,7 @@ window.addEventListener('load', function (e) {
         Sample5: sample5_vue_1.default,
         Sample6: sample6_vue_1.default,
         Sample7: sample7_vue_1.default,
+        Sample8: sample8_vue_1.default,
     }[location.search.substr(1)] || sample1_vue_1.default;
     new vue_1.default({
         el: emptyElement(),
@@ -10734,7 +10738,27 @@ exports.StyleWhite = StyleFactory({
     },
     titlebar: {
         backgroundColor: 'rgba(191, 191, 191, 0.9)'
-        // background: 'linear-gradient(to bottom, rgb(215, 215, 215), rgb(191, 191, 191))'
+    },
+    content: {},
+    button: {
+        color: '#000'
+    },
+    buttonHover: {
+        backgroundColor: 'rgba(0, 0, 0, 0.25)'
+    },
+    buttonActive: {
+        color: '#fff',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)'
+    }
+});
+exports.StyleMetal = StyleFactory({
+    window: {
+        color: '#000',
+        boxShadow: '0 4pt 8pt rgba(0, 0, 0, 0.5)',
+        background: 'linear-gradient(to bottom, rgb(215, 215, 215), rgb(191, 191, 191))'
+    },
+    titlebar: {
+        background: 'linear-gradient(to bottom, rgb(215, 215, 215), rgb(191, 191, 191))'
     },
     content: {},
     button: {
@@ -10805,7 +10829,7 @@ if (false) {(function () {
 
 "use strict";
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('hsc-window-style-white', [_c('hsc-window', {
+  return _c('hsc-window-style-metal', [_c('hsc-window', {
     attrs: {
       "title": "Window 1"
     }
@@ -10915,7 +10939,7 @@ exports.default = {
 
 "use strict";
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('hsc-window-style-white', [_c('hsc-window', {
+  return _c('hsc-window-style-metal', [_c('hsc-window', {
     attrs: {
       "title": "Window 1",
       "closeButton": true,
@@ -11008,7 +11032,7 @@ if (false) {(function () {
 
 "use strict";
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('hsc-window-style-white', [_c('hsc-window', {
+  return _c('hsc-window-style-metal', [_c('hsc-window', {
     attrs: {
       "title": "Center",
       "initialPosition": "center"
@@ -11260,7 +11284,7 @@ if (false) {(function () {
 
 "use strict";
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('hsc-window-style-white', [_vm._l(([1, 2, 3, 4]), function(i) {
+  return _c('div', [_c('hsc-window-style-metal', [_vm._l(([1, 2, 3, 4]), function(i) {
     return [_c('hsc-window', {
       key: i,
       attrs: {
@@ -11386,7 +11410,7 @@ exports = module.exports = __webpack_require__(5)(undefined);
 
 
 // module
-exports.push([module.i, "\ntable[data-v-0a0ba95e] {\n  white-space: nowrap;\n  border-spacing: .5em;\n}\ntd[data-v-0a0ba95e],\nth[data-v-0a0ba95e] {\n  text-align: center;\n  padding: 1em;\n  box-shadow: 0 0 4pt rgba(0, 0, 0, 0.25);\n  border-radius: 4pt;\n}\n", ""]);
+exports.push([module.i, "\ntable[data-v-0a0ba95e] {\n  white-space: nowrap;\n  border-spacing: .5em;\n}\ntd[data-v-0a0ba95e],\nth[data-v-0a0ba95e] {\n  text-align: center;\n  padding: 1em;\n  box-shadow: 0 0 4pt rgba(0, 0, 0, 0.25);\n  background-color: #eee;\n  border-radius: 4pt;\n}\n", ""]);
 
 // exports
 
@@ -12424,6 +12448,7 @@ var style_1 = __webpack_require__(46);
 exports.StyleFactory = style_1.StyleFactory;
 exports.StyleWhite = style_1.StyleWhite;
 exports.StyleBlack = style_1.StyleBlack;
+exports.StyleMetal = style_1.StyleMetal;
 function install(vue, options) {
     if (options === void 0) { options = { prefix: 'hsc-menu' }; }
     var prefix = options.prefix;
@@ -12434,6 +12459,7 @@ function install(vue, options) {
     vue.component(prefix + "-separator", separator_vue_1.default);
     vue.component(prefix + "-style-black", style_1.StyleBlack);
     vue.component(prefix + "-style-white", style_1.StyleWhite);
+    vue.component(prefix + "-style-metal", style_1.StyleMetal);
 }
 exports.install = install;
 
@@ -13525,6 +13551,25 @@ exports.StyleWhite = StyleFactory((function () {
     return {
         menu: base,
         menubar: base,
+        separator: { backgroundColor: 'rgba(127, 127, 127, 0.5)' },
+        active: { backgroundColor: 'rgba(127, 127, 127, 0.75)', color: '#fff' },
+        disabled: { opacity: '0.5' },
+    };
+})());
+exports.StyleMetal = StyleFactory((function () {
+    var menubar = {
+        background: 'linear-gradient(to bottom, rgb(215, 215, 215), rgb(191, 191, 191))',
+        color: 'black',
+        boxShadow: '0 2pt 6pt rgba(0, 0, 0, 0.5)',
+    };
+    var menu = {
+        backgroundColor: 'rgb(215, 215, 215)',
+        color: 'black',
+        boxShadow: '0 2pt 6pt rgba(0, 0, 0, 0.5)',
+    };
+    return {
+        menu: menu,
+        menubar: menubar,
         separator: { backgroundColor: 'rgba(127, 127, 127, 0.5)' },
         active: { backgroundColor: 'rgba(127, 127, 127, 0.75)', color: '#fff' },
         disabled: { opacity: '0.5' },
@@ -31930,7 +31975,7 @@ module.exports = function(module) {
 
 "use strict";
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('hsc-menu-style-white', {
+  return _c('div', [_c('hsc-menu-style-metal', {
     staticStyle: {
       "position": "fixed",
       "z-index": "2"
@@ -31978,7 +32023,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
         }
       }
     })
-  }))], 1)], 1), _vm._v(" "), _c('hsc-window-style-white', {
+  }))], 1)], 1), _vm._v(" "), _c('hsc-window-style-metal', {
     staticStyle: {
       "position": "fixed",
       "z-index": "1"
@@ -32197,6 +32242,143 @@ if (false) {
 
 /***/ }),
 /* 57 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ts_loader_node_modules_vue_loader_lib_selector_type_script_index_0_sample8_vue__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ts_loader_node_modules_vue_loader_lib_selector_type_script_index_0_sample8_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__ts_loader_node_modules_vue_loader_lib_selector_type_script_index_0_sample8_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0a27d860_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_sample8_vue__ = __webpack_require__(59);
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+
+/* template */
+
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__ts_loader_node_modules_vue_loader_lib_selector_type_script_index_0_sample8_vue___default.a,
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0a27d860_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_sample8_vue__["a" /* default */],
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src/sample8.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] sample8.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-0a27d860", Component.options)
+  } else {
+    hotAPI.reload("data-v-0a27d860", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
+
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = {
+    data: function () {
+        return {
+            w1: true,
+            w2: true,
+        };
+    }
+};
+
+
+/***/ }),
+/* 59 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('hsc-window-style-white', [_c('hsc-window', {
+    attrs: {
+      "title": "Window 1",
+      "closeButton": true,
+      "isOpen": _vm.w1
+    },
+    on: {
+      "closebuttonclick": function($event) {
+        _vm.w1 = !_vm.w1
+      }
+    }
+  }, [_vm._v("\n        Parameters:\n        "), _c('fieldset', [_c('legend', [_vm._v("α")]), _vm._v(" "), _c('input', {
+    attrs: {
+      "type": "range"
+    }
+  })]), _vm._v(" "), _c('fieldset', [_c('legend', [_vm._v("β")]), _vm._v(" "), _c('input', {
+    attrs: {
+      "type": "range"
+    }
+  })])]), _vm._v(" "), _c('hsc-window', {
+    attrs: {
+      "title": "Window 2",
+      "closeButton": true,
+      "isOpen": _vm.w2
+    },
+    on: {
+      "closebuttonclick": function($event) {
+        _vm.w2 = !_vm.w2
+      }
+    }
+  }, [_vm._v("\n        Parameters:\n        "), _c('fieldset', [_c('legend', [_vm._v("γ")]), _vm._v(" "), _c('input', {
+    attrs: {
+      "type": "range"
+    }
+  })]), _vm._v(" "), _c('fieldset', [_c('legend', [_vm._v("δ")]), _vm._v(" "), _c('input', {
+    attrs: {
+      "type": "range"
+    }
+  })])]), _vm._v(" "), _c('button', {
+    on: {
+      "click": function($event) {
+        _vm.w1 = !_vm.w1
+      }
+    }
+  }, [_vm._v("toggle window1")]), _vm._v(" "), _c('button', {
+    on: {
+      "click": function($event) {
+        _vm.w2 = !_vm.w2
+      }
+    }
+  }, [_vm._v("toggle window2")])], 1)
+}
+var staticRenderFns = []
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-0a27d860", esExports)
+  }
+}
+
+/***/ }),
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "index.html";
