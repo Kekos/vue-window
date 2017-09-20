@@ -1,7 +1,14 @@
+export interface Options {
+    minWidth: number;
+    maxWidth?: number;
+    minHeight: number;
+    maxHeight?: number;
+    onResize?: () => void;
+}
 export declare class ResizableHelper {
     readonly container: HTMLElement;
-    readonly onResiza: (() => void) | undefined;
+    readonly options: Options;
     private handles;
-    constructor(container: HTMLElement, onResiza?: (() => void) | undefined);
+    constructor(container: HTMLElement, options: Options);
     teardown(): void;
 }

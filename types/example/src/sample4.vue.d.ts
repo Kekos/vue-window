@@ -1,7 +1,2 @@
-declare const _default: {
-    data(): {
-        w1: boolean;
-        w2: boolean;
-    };
-};
+declare const _default: any;
 export default _default;
