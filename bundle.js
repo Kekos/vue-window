@@ -28357,7 +28357,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "\n.radial-gradient-1[data-v-09ef7a5c] {\n  width: 100%;\n  height: 100%;\n  background-image: radial-gradient(ellipse farthest-corner at 45px 45px, #00FFFF 0%, rgba(0, 0, 255, 0) 50%, #0000FF 95%);\n}\n.radial-gradient-2[data-v-09ef7a5c] {\n  width: 100%;\n  height: 100%;\n  background-image: radial-gradient(farthest-corner at 45px 45px, #FF0000 0%, #0000FF 100%);\n}\ntable[data-v-09ef7a5c] {\n  border-collapse: separate;\n  border-spacing: 4pt;\n}\ntd[data-v-09ef7a5c],\nth[data-v-09ef7a5c] {\n  width: 2em;\n  border-radius: 2pt;\n  padding: 2pt;\n  background-color: #eee;\n  text-align: center;\n}\n", ""]);
+exports.push([module.i, "\n.radial-gradient-1[data-v-09ef7a5c] {\n  width: 100%;\n  height: 100%;\n  background-image: radial-gradient(ellipse farthest-corner at 45px 45px, #00FFFF 0%, rgba(0, 0, 255, 0) 50%, #0000FF 95%);\n}\n.radial-gradient-2[data-v-09ef7a5c] {\n  width: 100%;\n  height: 100%;\n  background-image: radial-gradient(farthest-corner at 45px 45px, #FF0000 0%, #0000FF 100%);\n}\ntable[data-v-09ef7a5c] {\n  border-collapse: collapse;\n}\ntd[data-v-09ef7a5c] {\n  text-align: center;\n  color: rgba(0, 0, 0, 0.25);\n}\nth[data-v-09ef7a5c] {\n  color: white;\n  background-color: #000;\n}\n", ""]);
 
 // exports
 
@@ -28372,9 +28372,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var _ = __webpack_require__(8);
 exports.default = {
     data: function () {
-        return { n: 20 };
+        return { n: 21 };
     },
-    methods: { range: _.range }
+    methods: {
+        range: _.range,
+        hex: function (x) {
+            var hex = Math.floor(255 * x).toString(16);
+            if (hex.length <= 1)
+                hex = "0" + hex;
+            return hex;
+        }
+    }
 };
 
 
@@ -28438,8 +28446,8 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
       "resizable": true,
       "minWidth": 100,
       "minHeight": 100,
-      "maxWidth": 300,
-      "maxHeight": 300
+      "maxWidth": 200,
+      "maxHeight": 200
     }
   }, [_c('div', {
     staticStyle: {
@@ -28463,8 +28471,11 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     }), _vm._v(" "), _vm._l((_vm.range(_vm.n)), function(j) {
       return _c('td', {
         key: j,
+        style: ({
+          backgroundColor: ("rgb(" + (Math.floor(255 * i / _vm.n)) + ", " + (Math.floor(255 * j / _vm.n)) + ", 127)")
+        }),
         domProps: {
-          "innerHTML": _vm._s(i * j)
+          "innerHTML": _vm._s(_vm.hex(i / _vm.n * j / _vm.n))
         }
       })
     })], 2)
