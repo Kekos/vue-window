@@ -1,2 +1,6 @@
-declare const _default: any;
+declare const _default: {
+    data(): {
+        isOpen: boolean;
+    };
+};
 export default _default;

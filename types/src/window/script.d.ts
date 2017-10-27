@@ -20,7 +20,6 @@ export declare class WindowType extends Vue {
     beforeDestroy(): void;
     windowElement(): HTMLElement;
     titlebarElement(): HTMLElement;
-    contentElement(): HTMLElement;
     activate(): void;
     readonly styleWindow: {
         zIndex: string;
@@ -378,15 +377,9 @@ export declare class WindowType extends Vue {
     };
     readonly styleTitlebar: Partial<CSSStyleDeclaration>;
     readonly styleContent: Partial<CSSStyleDeclaration>;
-    onResizableChange(resizable: boolean): void;
-    onIsOpenChange(isOpen: boolean): void;
-    onZGroupChange(): void;
+    private onResizableChange(resizable);
+    private onIsOpenChange(isOpen);
+    private onZGroupChange();
     private fixPosition();
     private onResizeWindow;
-    minWidth: number;
-    minHeight: number;
-    maxWidth?: number;
-    maxHeight?: number;
-    private initResizeHelper();
-    private onResize();
 }
