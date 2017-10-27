@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import Vue, * as vue from 'vue';
 export declare type Style = Partial<CSSStyleDeclaration>;
 export interface WindowStyle {
     window: Style;
@@ -8,6 +8,7 @@ export interface WindowStyle {
     buttonHover: Style;
     buttonActive: Style;
 }
-export declare function StyleFactory(windowStyle: WindowStyle): Vue.ComponentOptions<Vue>;
-export declare const StyleBlack: Vue.ComponentOptions<Vue>;
-export declare const StyleWhite: Vue.ComponentOptions<Vue>;
+export declare function StyleFactory(windowStyle: WindowStyle): vue.ComponentOptions<Vue>;
+export declare const StyleBlack: vue.ComponentOptions<Vue>;
+export declare const StyleWhite: vue.ComponentOptions<Vue>;
+export declare const StyleMetal: vue.ComponentOptions<Vue>;
