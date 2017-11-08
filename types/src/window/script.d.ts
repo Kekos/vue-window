@@ -383,6 +383,9 @@ export declare class WindowType extends Vue {
     onZGroupChange(): void;
     private fixPosition();
     private onResizeWindow;
+    initialWidth?: number;
+    initialHeight?: number;
+    private setDimension();
     minWidth: number;
     minHeight: number;
     maxWidth?: number;
